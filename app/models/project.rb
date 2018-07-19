@@ -5,4 +5,8 @@ class Project < ApplicationRecord
   validates :name, :lang, :description, presence: true
   validates :name, uniqueness: true
   validates :description, length: { minimum: 10 }
+  
+  def self.sort_desc
+    order(created_at: :desc)
+  end
 end
