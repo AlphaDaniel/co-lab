@@ -12,6 +12,8 @@ require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require 'faker'
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -31,3 +33,5 @@ module CoLab
     config.generators.system_tests = nil
   end
 end
+
+
