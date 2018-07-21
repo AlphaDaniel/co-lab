@@ -1,9 +1,8 @@
 class ProjectsController < ApplicationController
-  before_action :log_in_required, only: [:index]
+  before_action :log_in_required
   before_action :set_project, only: [:show]
   
   def show
-    
   end
   
 private

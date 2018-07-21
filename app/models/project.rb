@@ -6,7 +6,7 @@ class Project < ApplicationRecord
   validates :name, uniqueness: true
   validates :description, length: { minimum: 10 }
   
-  def self.sort_desc
+  def self.all_desc
     order(created_at: :desc)
   end
 end

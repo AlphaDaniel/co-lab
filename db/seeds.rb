@@ -47,8 +47,12 @@ until UserProject.count == 30 do
   i += 1
 end
 
-# create default account
-User.create(name: "admin", email: "admin@colab.com", password: "123456")
+# for testing
+user = User.create(name: "admin", email: "admin@colab.com", password: "123456")
+project = Project.create(name: "For Testing", lang: "Ruby", description: "Dummy project for testing")
+up = UserProject.create(user_id: user.id, project_id: project.id, role: "Creator")
+# Project.find(11)
+# Project.find(11).user_projects
 
 # report
 uc = User.count

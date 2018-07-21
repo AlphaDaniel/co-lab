@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   end
   
   def all_projects
-    @projects = Project.all
+    @projects = Project.all_desc
   end
 end
