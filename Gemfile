@@ -26,7 +26,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+# auth
 gem 'devise'
+gem 'omniauth-facebook'
+
+# misc
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'colorize'
 
