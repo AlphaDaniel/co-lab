@@ -47,6 +47,9 @@ until UserProject.count == 30 do
   i += 1
 end
 
+# create default account
+User.create(name: "admin", email: "admin@colab.com", password: "123456")
+
 # report
 uc = User.count
 pc = Project.count

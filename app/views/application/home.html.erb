@@ -1,4 +1,9 @@
-Homepage
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete if user_signed_in? %>
-<%= link_to "Sign In", new_user_session_path if !user_signed_in? %>
+<% if user_signed_in? %>
+  
+  <%= render 'projects/project_listing', projects: all_projects %>
+  
+<% else %>
 
+  WELCOME TO CO-LAB
+  
+<% end %>
