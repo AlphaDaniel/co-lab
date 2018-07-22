@@ -1,0 +1,18 @@
+<div class="table_wrapper">
+  <%= render 'users/table_heading', data: data %>
+
+  <table class="table">
+    <tbody>
+      <%= render 'users/table_headers' %>
+      
+      <% if data.instance_of? User %>
+        <%= render 'users/table_shared_data', user: data %>
+      <% else %>
+        <% data.each do |user| %>
+          <%= render 'users/table_shared_data', user: user %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table> 
+  
+</div>

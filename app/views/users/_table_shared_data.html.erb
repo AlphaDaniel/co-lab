@@ -1,0 +1,16 @@
+<tr>
+  <td><%= user.name %></td>
+  
+  <td>
+    <% user.projects_created.map do |project| %>
+      <%= link_to project.name, project_path(project) %>
+    <% end %>
+  </td>
+  
+  <td>
+    <% user.collaborations.map do |project| %>
+      <%= link_to project.name, project_path(project) %>
+    <% end %>
+  </td>
+
+</tr>

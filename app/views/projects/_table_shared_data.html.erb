@@ -1,4 +1,4 @@
-<td><%= project.creator.name %></td>
+<td><%= link_to project.creator.name, user_path(project.creator) %></td>
 <td><%= project.name %></td>
 <td><%= project.lang.titleize %></td>
 <td><%= project.description %></td>
