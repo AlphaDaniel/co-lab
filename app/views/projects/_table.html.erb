@@ -4,7 +4,8 @@
   <table class="table">
 
     <tbody>
-      <tr> 
+      <tr>
+        <td><strong>Creator</strong></td>
         <td><strong>Project Name</strong></td>
         <td><strong>Programming Language</strong></td>
         <td><strong>Description</strong></td>
@@ -15,6 +16,7 @@
       
         <% project.each do |project| %>
           <tr>
+            <td><%= project.creator.name %></td>
             <td><%= project.name %></td>
             <td><%= project.lang %></td>
             <td><%= project.description %></td>
@@ -25,6 +27,7 @@
       <% elsif type.eql? 'show' %>
       
         <tr>
+          <td><%= project.creator.name %></td>
           <td><%= project.name %></td>
           <td><%= project.lang %></td>
           <td><%= project.description %></td>
