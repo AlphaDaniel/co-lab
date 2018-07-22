@@ -21,4 +21,12 @@ class Project < ApplicationRecord
   def creator
     user_projects.where(role: 'Creator')[0].user
   end
+  
+  def collaborators
+    user_projects.where(role: "Collaborator").map {|up| up.user}
+  end
+  
+  def is_collaborator?(user)
+    collaborators.include?(user)
+  end
 end

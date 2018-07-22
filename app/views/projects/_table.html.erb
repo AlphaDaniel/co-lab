@@ -19,11 +19,13 @@
       
         <tr>
           <%= render 'projects/table_shared_data', project: data %>
-
+          
           <% if current_user == data.creator %>
             <td><%= link_to 'Edit', edit_project_path(data) %></td>
+          <% elsif data.is_collaborator?(current_user) %>
+            <td><%= link_to 'Leave', project_leave_path(data), method: :post %></td>
           <% else %>
-            <td><%= link_to 'Join', '#' %></td>
+            <td><%= link_to 'Join', project_join_path(data), method: :post %></td>
           <% end %>
         </tr>       
       

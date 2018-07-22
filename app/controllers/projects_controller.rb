@@ -29,6 +29,19 @@ class ProjectsController < ApplicationController
     @project.update(project_params) ? (redirect_to @project, notice: 'Updated') : (render :edit)
   end
   
+  def join
+    @project = Project.find(params[:project_id])
+    up = UserProject.create(user_id: current_user.id, project_id: @project.id, role: "Collaborator")
+    flash[:notice] = "You have joined #{@project.name}"
+    render 'show' 
+  end
+  
+  def leave
+    @project = Project.find(params[:project_id])
+    UserProject.where(user_id: current_user, project_id: @project.id)[0].destroy
+    redirect_to root_path, alert: "You have left #{@project.name}"
+  end
+  
 private
 
   def set_project

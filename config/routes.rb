@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :projects do 
     get 'collaborators' => 'users#index'
+    post 'join' => 'projects#join'
+    post 'leave' => 'projects#leave'
   end
   
   resources :users do
