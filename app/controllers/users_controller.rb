@@ -4,10 +4,16 @@ class UsersController < ApplicationController
   def index
     if params[:project_id]
       @project = Project.find_by(id: params[:project_id])
-      @users = @project.users
-      @type = 'Collaborators'
+      @users = @project.try(:users)
       
-      return redirect_to project_path(@project) if @project.nil?
+      if @project.nil?
+        redirect_to root_path, alert: "Invalid Url" 
+      end
+      
+      @heading = 'Collaborators'
+    else
+      @heading = 'Active Members'
+      @users = User.all
     end
   end
   
