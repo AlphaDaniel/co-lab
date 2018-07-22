@@ -13,14 +13,29 @@
  *= require_tree .
  *= require_self
  */
+ 
+/*GLOBAL*/
+h1, h2 {
+    text-decoration: underline;
+}
+ 
+/*MESSAGES*/
+.notice {
+    color: green;
+}
+
+.alert {
+    color: red;
+}
 
 /*TABLES*/
 .table_wrapper {
     text-align: center;
 }
 
-.table_heading {
-    text-decoration: underline;
+.table_top_actions {
+    text-align: left;
+    margin-left: 56px;
 }
 
 .table {
@@ -29,6 +44,35 @@
 }
 
 td {
-  border: solid .5px black;
-  padding: 1em;
+    border: solid .5px black;
+    padding: 1em;
+}
+
+/*FORMS*/
+input {
+    display: block;
+    margin: 0.5em 0;
+}
+
+input[type="submit"] {
+    margin-top: 2em;
+}
+
+/*errors*/
+.form_errors {
+    margin-bottom: 1em;
+}
+
+i.fas.fa-exclamation-triangle {
+    display: block;
+    padding: 0.5em 0;
+}
+
+div.field_with_errors {
+    display: inline;
+}
+
+.field_with_errors input {
+    border: solid 1px red;
+    box-shadow: 0px 0 10px -2px red;
 }

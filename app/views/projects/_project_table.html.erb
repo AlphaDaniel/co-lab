@@ -22,6 +22,10 @@
 
       <% if type.eql? 'index' %>
       
+        <div class="table_top_actions">
+          <%= link_to 'Add New Project', new_project_path %>
+        </div>
+      
         <% projects.each do |project| %>
           <tr>
             <td><%= project.name %></td>
