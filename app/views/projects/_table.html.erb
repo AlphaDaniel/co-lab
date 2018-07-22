@@ -1,25 +1,16 @@
 <div class="project_table_wrapper">
-  <%= render 'projects/links', type: type, project: project %>
+  <%= render 'projects/links', type: type, project: data %>
   
   <table class="table">
 
     <tbody>
-      <tr>
-        <td><strong>Creator</strong></td>
-        <td><strong>Project Name</strong></td>
-        <td><strong>Programming Language</strong></td>
-        <td><strong>Description</strong></td>
-        <td><strong>Action</strong></td>
-      </tr>
+      <%= render 'projects/table_headers', project: data %>
 
       <% if type.eql? 'index' %>
       
-        <% project.each do |project| %>
+        <% data.each do |project| %>
           <tr>
-            <td><%= project.creator.name %></td>
-            <td><%= project.name %></td>
-            <td><%= project.lang %></td>
-            <td><%= project.description %></td>
+            <%= render 'projects/table_shared_data', project: project %>
             <td><%= link_to 'View', project_path(project) %></td>
           </tr>
         <% end %>
@@ -27,20 +18,16 @@
       <% elsif type.eql? 'show' %>
       
         <tr>
-          <td><%= project.creator.name %></td>
-          <td><%= project.name %></td>
-          <td><%= project.lang %></td>
-          <td><%= project.description %></td>
+          <%= render 'projects/table_shared_data', project: data %>
 
-          <% if current_user == project.creator %>
-            <td><%= link_to 'Edit', edit_project_path(project) %></td>
+          <% if current_user == data.creator %>
+            <td><%= link_to 'Edit', edit_project_path(data) %></td>
           <% else %>
             <td><%= link_to 'Join', '#' %></td>
           <% end %>
         </tr>       
       
       <% end %>
-      
     </tbody>
   </table>
 </div>
