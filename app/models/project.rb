@@ -19,6 +19,6 @@ class Project < ApplicationRecord
   end
   
   def creator
-    User.find(user_projects.where(role: 'Creator')[0].user_id)
+    user_projects.where(role: 'Creator')[0].user
   end
 end

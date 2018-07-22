@@ -37,6 +37,10 @@
       
       <% elsif type.eql? 'show' %>
       
+        <div class="table_top_actions">
+          <%= link_to 'Collaborators', project_collaborators_path(project) %>
+        </div>
+      
         <tr>
           <td><%= project.name %></td>
           <td><%= project.lang %></td>

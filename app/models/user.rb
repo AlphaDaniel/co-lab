@@ -25,5 +25,16 @@ class User < ApplicationRecord
       end
     end
   end
-
+  
+  def projects_created
+    user_projects.where(role: "Creator").map do |up|
+      up.project
+    end
+  end
+  
+  def collaborations
+    user_projects.where(role: "Collaborator").map do |up|
+      up.project
+    end
+  end
 end
