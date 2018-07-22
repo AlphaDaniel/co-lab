@@ -1,7 +1,7 @@
 <% if type.eql? 'index' %>
 
   <div class="table_top_links">
-    <%= link_to 'Add New Project', new_project_path %>
+    <%= link_to 'Add New Project', new_user_project_path(current_user.id) %>
   </div>
   
 <% elsif type.eql? 'show' %>
