@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   helper_method [:project_errors]
   before_action :log_in_required
-  before_action :set_project, only: [:show]
+  before_action :set_project, only: [:show, :edit, :update]
   
   def new
     @project = Project.new
@@ -20,6 +20,13 @@ class ProjectsController < ApplicationController
   end
   
   def show
+  end
+  
+  def edit
+  end
+  
+  def update
+    @project.update(project_params) ? (redirect_to @project, notice: 'Updated') : (render :edit)
   end
   
 private

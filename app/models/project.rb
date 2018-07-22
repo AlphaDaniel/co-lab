@@ -17,4 +17,8 @@ class Project < ApplicationRecord
   def self.all_desc
     order(created_at: :desc)
   end
+  
+  def creator
+    User.find(user_projects.where(role: 'Creator')[0].user_id)
+  end
 end

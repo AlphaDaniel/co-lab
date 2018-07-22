@@ -41,7 +41,12 @@
           <td><%= project.name %></td>
           <td><%= project.lang %></td>
           <td><%= project.description %></td>
-          <td><%= link_to 'Join', '#' %></td>
+
+          <% if current_user == project.creator %>
+            <td><%= link_to 'Edit', edit_project_path(project) %></td>
+          <% else %>
+            <td><%= link_to 'Join', '#' %></td>
+          <% end %>
         </tr>       
       
       <% end %>
