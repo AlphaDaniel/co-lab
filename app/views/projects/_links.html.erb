@@ -1,0 +1,13 @@
+<% if type.eql? 'index' %>
+
+  <div class="table_top_links">
+    <%= link_to 'Add New Project', new_project_path %>
+  </div>
+  
+<% elsif type.eql? 'show' %>
+
+  <div class="table_top_links">
+    <%= link_to 'Collaborators', project_collaborators_path(project) %>
+  </div>
+  
+<% end %>

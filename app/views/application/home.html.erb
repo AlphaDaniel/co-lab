@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
   
-  <%= render 'projects/project_table', projects: all_projects, type: 'index' %>
+  <h1 class="table_heading">Project Listing</h1>
+  <%= render 'projects/table', project: all_projects, type: 'index' %>
   
 <% else %>
 

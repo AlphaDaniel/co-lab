@@ -29,13 +29,19 @@ h1, h2 {
 }
 
 /*TABLES*/
-.table_wrapper {
+.project_table_wrapper {
     text-align: center;
 }
 
-.table_top_actions {
+.table_heading {
+    margin-left: 50px;
+    margin-bottom: 0.5em;
+}
+
+.table_top_links {
+    padding: 0 0 1em 1em;
     text-align: left;
-    margin-left: 56px;
+    margin-left: 40px;
 }
 
 .table {
