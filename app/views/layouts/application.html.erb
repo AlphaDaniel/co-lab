@@ -12,11 +12,15 @@
 
   <body>
     <%= render 'layouts/navigation' %>
-    <%= render 'layouts/messages' %>
     
     <div class="content">
+      <%= render 'layouts/messages' %>
       <%= yield %>
+      
+      <% if signed_in? %>
+        <input class="btn btn-blu" type="button" value="Go Back" onclick="history.back(-1)" />
+      <% end %>  
     </div>
-    
+
   </body>
 </html>

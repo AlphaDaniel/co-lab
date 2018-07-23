@@ -4,7 +4,18 @@
   <%= render 'projects/table', data: all_projects, type: 'index' %>
   
 <% else %>
-
-  <%= tag.h1 'WELCOME TO CO-LAB' %>
   
+  <div class="greeting">
+    <%= tag.h1 'WELCOME TO CO-LAB' %>
+    <%= tag.h4 'A Place For Developers To Co-nnect, Co-llaborate, and Co-de!' %>
+    <%= tag.p Faker::Lorem.paragraph_by_chars(500) %>
+    <%= tag.p Faker::Lorem.paragraph_by_chars(500) %>
+    <%= tag.p Faker::Lorem.paragraph_by_chars(500) %>
+  </div>
+  
+    <%= tag.a 'Join Now', href: new_user_registration_path, class: 'btn btn-grn' %>
 <% end %>
+
+
+
+

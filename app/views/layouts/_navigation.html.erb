@@ -1,14 +1,20 @@
 <div class="navbar">
-  <%= link_to 'Home', root_path %>
+  <div class="brand">
+    <a href="/"><img src="/assets/logo.svg" alt="Site Logo"></a>
+  </div>
   
-  <% if user_signed_in? %>
-  
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <div class="menu">
+    <%= link_to 'HOME', root_path %>
     
-  <% else %>
-  
-    <%= link_to "Sign In", new_user_session_path %>
+    <% if user_signed_in? %>
     
-  <% end %> 
+      <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %>
+      
+    <% else %>
+    
+      <%= link_to "SIGN IN", new_user_session_path %>
+      
+    <% end %>     
+  </div>
 </div>
 
