@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 # auth
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'dotenv-rails'
 
 # misc
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
